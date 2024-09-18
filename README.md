@@ -1,4 +1,4 @@
-# Tutorial: Gerar DLL em C e Usar no Python
+### Tutorial: Gerar DLL em C e Usar no Python
 
 Este repositório contém um exemplo de integração entre C e Python utilizando uma função recursiva de cálculo de fatorial. O código em C é compilado em uma DLL (Dynamic Link Library) que é carregada no Python através do módulo `ctypes`. O objetivo deste projeto é demonstrar como criar bibliotecas em C e utilizá-las diretamente em scripts Python.
 
@@ -61,23 +61,20 @@ Para compilar o código em C e gerar a DLL, siga os passos abaixo:
 
 Agora, você pode usar a função `fatorial` no Python através do módulo `ctypes`.
 
-Crie um arquivo Python, por exemplo, `test_fatorial.py`, com o seguinte código:
+Crie um arquivo Python, por exemplo, `fatorial.py`, com o seguinte código:
 
 ```python
 import ctypes as c
-```
 
-# Carregar a DLL
 dll = c.CDLL('./fatorial.dll')
 
-# Definir o tipo de argumento e o tipo de retorno da função fatorial
 dll.fatorial.argtypes = (c.c_int,)
 dll.fatorial.restype = c.c_int
 
-# Usar a função fatorial da DLL
 n = 6
 fat = dll.fatorial(n)
 print(f"O fatorial de {n} é: {fat}")
+```
 
 ## Como o Código Funciona
 
