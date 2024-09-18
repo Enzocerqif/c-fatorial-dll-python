@@ -42,6 +42,7 @@ __declspec(dllexport) int fatorial(int n) {
         return n * fatorial(n - 1);
     }
 }
+```
 
 ## Passo 2: Gerar a DLL
 
@@ -64,6 +65,7 @@ Crie um arquivo Python, por exemplo, `test_fatorial.py`, com o seguinte código:
 
 ```python
 import ctypes as c
+```
 
 # Carregar a DLL
 dll = c.CDLL('./fatorial.dll')
